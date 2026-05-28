@@ -13,7 +13,7 @@ import FAQ from "./components/FAQ";
 
 
 import ProgramOverview from "./components/ProgramOverview";
-import RecruitersStats from "./components/RecruitersStats";
+// import RecruitersStats from "./components/RecruitersStats";
 import OurCourse from "./components/OurCourse";
 import Footer from "./components/Footer";
 
@@ -26,10 +26,11 @@ function App() {
       {/* <AboutUs /> */}
     
 
-      <RecruitersStats />
+      {/* <RecruitersStats /> */}
+        <TopRecruiters />
       <OurCourse />
       <WhyChooseEngineering />
-      {/* <TopRecruiters /> */}
+    
       <NewSection />
       <CampusHighlightsSection />
       <StudentClubsSection />

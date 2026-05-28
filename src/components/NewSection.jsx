@@ -39,7 +39,11 @@ const NewSection = () => {
         <div className="grid grid-cols-2 gap-3">
           {events.map((ev) => (
             <div key={ev.id} className="overflow-hidden rounded-xl shadow">
-              <img src={ev.image} alt={ev.name} className="w-full h-40 object-cover" />
+              <img
+                src={ev.image}
+                alt={ev.name}
+                className={`w-full h-40 object-cover ${ev.id === 5 ? "object-top" : ""}`}
+              />
             </div>
           ))}
         </div>
@@ -105,7 +109,7 @@ const NewSection = () => {
                 <img src={events[3].image} alt={events[3].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={events[4].image} alt={events[4].name} className="w-full h-full object-cover" />
+                <img src={events[4].image} alt={events[4].name} className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </div>
