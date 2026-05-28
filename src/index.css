@@ -23,6 +23,18 @@
   }
 }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 @layer base {
   body {
     @apply m-0 p-0 overflow-x-hidden;
