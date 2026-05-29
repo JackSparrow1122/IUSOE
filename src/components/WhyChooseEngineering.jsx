@@ -53,7 +53,7 @@ function WhyChooseEngineering() {
         {/* Heading */}
         <div className="text-center mb-8">
           <h2 className="text-white text-2xl font-bold leading-tight">
-            Why Choose ENGINEERING at Indira University?
+            Why Choose Engineering at Indira University?
           </h2>
         </div>
 
@@ -78,7 +78,7 @@ function WhyChooseEngineering() {
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-            Why Choose ENGINEERING at Indira University?
+            Why Choose Engineering at Indira University?
           </h2>
         </div>
 

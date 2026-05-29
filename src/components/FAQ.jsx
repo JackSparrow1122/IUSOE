@@ -29,6 +29,11 @@ const FAQ_DATA = [
     answer:
       "Yes, scholarships are available based on merit, entrance exam scores, and reserved category eligibility. Contact admissions for details.",
   },
+  {
+    question: "What kind of placement support does the university offer?",
+    answer:
+      "We have a dedicated corporate relations and placement cell that organizes campus recruitment drives, mock interviews, and resume-building workshops, helping students secure placements with leading tech companies.",
+  },
 ];
 
 /* ---------------- ACCORDION ITEM ---------------- */

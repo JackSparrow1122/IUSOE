@@ -25,15 +25,12 @@ function ApplyProcess() {
     <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Main Heading */}
       <div className="mb-8 border-b-2 border-gray-100 pb-6">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#000B24] mb-4 md:mb-6">
-          Application Process
+        <h2 className="text-2xl md:text-3xl font-black text-[#000B24] mb-4 md:mb-6">
+          How to Apply for Engineering at Indira University?
         </h2>
         <h3 className="text-xl md:text-2xl font-bold text-[#000B24] mb-2 leading-tight">
-          Secure your B Tech seat 2026 at Pune's best engineering college.
+          Secure your B.Tech seat 2026 at Pune's best engineering college.
         </h3>
-        <p className="text-sm md:text-base text-slate-500 font-semibold tracking-wide uppercase">
-          How to Apply for Engineering at Indira University?
-        </p>
       </div>
 
       {/* Steps Cards */}

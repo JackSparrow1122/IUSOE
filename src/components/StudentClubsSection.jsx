@@ -28,7 +28,7 @@ const StudentClubsSection = () => {
               Engineering Student Clubs
             </h3>
             <p className="text-sm md:text-lg text-slate-200 leading-relaxed text-justify">
-              Swakiyam Foundation for Incubation and Innovation offers mentorship, and a world-class incubation centre for entrepreneurs. And other student clubs to help you learn, compete and lead teams to grow holistically. These clubs build leadership, networking, and CV skills. Secure your B Tech seat 2026 at Pune's best engineering college.
+              Swakiyam Foundation for Incubation and Innovation offers mentorship, and a world-class incubation centre for entrepreneurs. And other student clubs to help you learn, compete and lead teams to grow holistically. These clubs build leadership, networking, and CV skills. Secure your B.Tech seat 2026 at Pune's best engineering college.
             </p>
           </div>
 
