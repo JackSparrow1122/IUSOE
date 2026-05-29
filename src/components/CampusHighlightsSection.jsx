@@ -15,82 +15,51 @@ const CampusHighlightsSection = () => {
   ];
 
   return (
-    <>
-      {/* ═══════════════════════════════════════════
-          MOBILE LAYOUT  (hidden on md and above)
-      ═══════════════════════════════════════════ */}
-      <section className="block md:hidden w-full bg-white px-5 py-8">
-        {/* Label */}
-        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest border-b border-gray-300 pb-2 mb-6">
-          02 - Campus Highlights
-        </p>
+    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-16 px-6 md:px-12 text-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Top Divider Line with Red Gradient */}
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-10 opacity-15" />
 
-        {/* Heading */}
-        <h2 className="text-3xl font-bold text-[#000B24] mb-3">
-          Campus Facilities &amp; Infrastructure
-        </h2>
-        <p className="text-sm text-gray-700 leading-relaxed text-justify mb-6">
-          Smart classrooms, computer labs, library with e-resources, Innovation and
-          Entrepreneurship Center for startups, AC hostels with Wi-Fi, cafeteria,
-          sports complex, gymnasium, medical center, placement cell, and modern
-          auditorium for comprehensive BBA education in Pune.
-        </p>
-
-        {/* Photo grid — 2 columns */}
-        <div className="grid grid-cols-2 gap-3">
-          {facilities.map((f) => (
-            <div key={f.id} className="overflow-hidden rounded-xl shadow">
-              <img src={f.image} alt={f.name} className="w-full h-40 object-cover" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          DESKTOP LAYOUT  (hidden below md) — UNCHANGED
-      ═══════════════════════════════════════════ */}
-      <section className="hidden md:block w-full bg-white p-10">
-        {/* Top section */}
-        <div className="w-full pt-8 pb-2 border-b-2 border-gray-300">
-          <p className="text-sm md:text-base font-semibold text-gray-800 uppercase tracking-widest">
-            02 - Campus Highlights
-          </p>
-        </div>
-        <div className="mb-4"></div>
-
-        {/* Content section */}
-        <div className="flex gap-6 items-center w-full h-[calc(100vh-120px)] max-w-[1800px] mx-auto py-4">
-          {/* Left side - Text content (40%) */}
-          <div
-            style={{ flex: "0 0 40%" }}
-            className="flex flex-col items-start justify-start min-h-0 flex-shrink-0 pt-10"
-          >
-            <div className="space-y-6">
-              <h2 className="text-5xl md:text-7xl font-bold text-[#000B24]">
-                Campus Facilities &amp; Infrastructure
-              </h2>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-justify">
-                Smart classrooms, computer labs, library with e-resources,
-                Innovation and Entrepreneurship Center for startups, AC hostels
-                with Wi-Fi, cafeteria, sports complex, gymnasium, medical center,
-                placement cell, and modern auditorium for comprehensive BBA
-                education in Pune.
-              </p>
-            </div>
+        {/* Main Content: Flex column on mobile (text then image), Row on desktop */}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+          
+          {/* Text Content: order-1 on mobile, order-2 on desktop */}
+          <div className="w-full md:w-[40%] space-y-6 order-1 md:order-2">
+            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              Campus Facilities &amp; Infrastructure
+            </h3>
+            <p className="text-sm md:text-lg text-slate-200 leading-relaxed text-justify">
+              Smart classrooms, computer labs, library with e-resources,
+              Innovation and Entrepreneurship Center for startups, AC hostels
+              with Wi-Fi, cafeteria, sports complex, gymnasium, medical center,
+              placement cell, and modern auditorium for comprehensive BBA
+              education in Pune.
+            </p>
           </div>
 
-          {/* Right side - Grid (60%) */}
-          <div style={{ flex: "0 0 60%" }} className="min-w-0 flex-shrink-0 flex items-center">
+          {/* Photo Grid: order-2 on mobile, order-1 on desktop */}
+          <div className="w-full md:w-[60%] order-2 md:order-1">
+            {/* Mobile Grid (2 columns, 5th image takes full width) */}
+            <div className="grid grid-cols-2 gap-3 md:hidden">
+              {facilities.map((f, i) => (
+                <div 
+                  key={f.id} 
+                  className={`overflow-hidden rounded-xl shadow ${
+                    i === 4 ? "col-span-2" : ""
+                  }`}
+                >
+                  <img src={f.image} alt={f.name} className="w-full h-40 object-cover" />
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Grid */}
             <div
+              className="hidden md:grid w-full gap-2 h-[450px]"
               style={{
-                display: "grid",
                 gridTemplateColumns: "repeat(6, 1fr)",
                 gridTemplateRows: "repeat(10, 1fr)",
-                gap: "8px",
-                height: "72vh",
-                padding: "20px",
               }}
-              className="w-full"
             >
               <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <img src={facilities[0].image} alt={facilities[0].name} className="w-full h-full object-cover" />
@@ -105,13 +74,13 @@ const CampusHighlightsSection = () => {
                 <img src={facilities[3].image} alt={facilities[3].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={facilities[4].image} alt={facilities[4].name} className="w-full h-full object-cover" />
+                <img src={facilities[4].image} alt={facilities[4].name} className="w-full h-full object-cover animate-pulse-slow" />
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

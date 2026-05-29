@@ -2,44 +2,44 @@ import React from "react";
 
 const features = [
   {
-    title: "Industry-Ready Curriculum",
+    title: "Industry-Aligned Curriculum",
     description:
-      "Future-focused curriculum designed with industry trends, real-world skills and emerging technologies.",
+      "Designed with input from global tech leaders to ensure you learn exactly what the industry demands.",
   },
   {
-    title: "Consistent Placement Record",
+    title: "Experiential Learning",
     description:
-      "Proven track record of high placements with top recruiters year after year.",
+      "Learn by doing through live projects, case studies, hackathons, and real-world engineering challenges.",
   },
   {
-    title: "Expert Faculty & Mentorship",
+    title: "Specialised Learning Tracks",
     description:
-      "Learn from experienced faculty and industry experts who mentor, guide and inspire.",
+      "Choose from AI and Data Science, or Cyber Security, the most in-demand fields of the decade.",
   },
   {
-    title: "Guest Lectures & Industry Sessions",
+    title: "Startup & Innovation Ecosystem",
     description:
-      "Regular sessions by industry leaders to keep you inspired and industry-aware.",
+      "Turn your ideas into products with incubation support, mentorship, and seed funding opportunities.",
   },
   {
-    title: "Advanced Infrastructure",
+    title: "Research-Driven Environment",
     description:
-      "State-of-the-art labs, smart classrooms and innovation centers for future-ready engineers.",
+      "Work alongside faculty on cutting-edge research in machine learning, cloud security, and computer vision.",
+  },
+  {
+    title: "Modern Computing Infrastructure",
+    description:
+      "Access to AI labs, cyber ranges, GPU workstations, and smart classrooms.",
   },
   {
     title: "Industry Readiness Programme",
     description:
-      "Special training, certifications, workshops and mock sessions to make you industry ready.",
+      "Gain industry certifications, attend mock interviews, and build a portfolio that stands out.",
   },
   {
-    title: "Widespread Alumni Network",
+    title: "Holistic Development",
     description:
-      "Strong alumni network across the globe opens doors to opportunities and guidance.",
-  },
-  {
-    title: "Experiential Learning Methodology",
-    description:
-      "Learn by doing through projects, case studies, hackathons and hands-on experiences.",
+      "Develop leadership, communication, and teamwork skills alongside your technical expertise.",
   },
 ];
 
@@ -55,9 +55,6 @@ function WhyChooseEngineering() {
           <h2 className="text-white text-2xl font-bold leading-tight">
             Why Choose ENGINEERING at Indira University?
           </h2>
-          <p className="text-white/80 text-sm mt-3 leading-relaxed">
-            Empowering future engineers with AI-driven education, innovation, and industry-ready skills.
-          </p>
         </div>
 
         {/* Cards — 2 columns on mobile */}
@@ -67,8 +64,8 @@ function WhyChooseEngineering() {
               key={index}
               className="border border-[#1D5DFF] rounded-tl-[2rem] rounded-br-[2rem] p-4 flex flex-col justify-center text-center"
             >
-              <h3 className="text-white text-sm font-bold leading-snug">{item.title}</h3>
-              <p className="text-white/70 text-[11px] mt-2 leading-relaxed">{item.description}</p>
+              <h3 className="text-white text-xs md:text-xl font-bold leading-snug">{item.title}</h3>
+              <p className="text-slate-200/90 text-[10px] md:text-base mt-2 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
@@ -83,9 +80,6 @@ function WhyChooseEngineering() {
           <h2 className="text-white text-3xl md:text-5xl font-bold leading-tight">
             Why Choose ENGINEERING at Indira University?
           </h2>
-          <p className="text-white/90 text-lg md:text-2xl mt-4 max-w-4xl mx-auto leading-relaxed">
-            Empowering future engineers with AI-driven education, innovation, and industry-ready skills.
-          </p>
         </div>
 
         {/* Grid */}
@@ -97,8 +91,8 @@ function WhyChooseEngineering() {
                          bg-transparent backdrop-blur-sm p-8 flex flex-col justify-center
                          transition-all duration-300 hover:border-cyan-400 hover:-translate-y-2"
             >
-              <h3 className="text-white text-2xl font-bold leading-snug text-center">{item.title}</h3>
-              <p className="text-white/80 text-sm md:text-base text-center mt-5 leading-relaxed">{item.description}</p>
+              <h3 className="text-white text-lg md:text-xl font-bold leading-snug text-center">{item.title}</h3>
+              <p className="text-slate-200/90 text-sm md:text-base text-center mt-5 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

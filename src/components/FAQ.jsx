@@ -5,35 +5,29 @@ import { FaArrowDown } from "react-icons/fa";
 
 const FAQ_DATA = [
   {
-    question:
-      "What is the eligibility for BBA admission at Indira University?",
+    question: "What is the eligibility for B.Tech admission?",
     answer:
-      "You need to have passed 10+2 from any recognized board with minimum 45% aggregate. All streams (Commerce, Science, Arts) are eligible.",
+      "You must have passed 10+2 with PCM or PCB, securing at least 45% aggregate (40% for reserved categories).",
   },
   {
-    question: "Which entrance exams are accepted for BBA admission?",
+    question: "Which entrance exams are accepted?",
     answer:
-      "We accept CUET and conduct our own Indira University Common Entrance Test (IU-CET).",
+      "We accept valid scores from MHT-CET / JEE Main / SAT / IUCET.",
   },
   {
-    question: "What is the BBA course fee at Indira University Pune?",
+    question: "Does the university provide internship opportunities?",
     answer:
-      "The total fee for the BBA programme is ₹1.5 Lakh, and scholarships are also available.",
+      "Yes, mandatory industry internships are integrated into the curriculum.",
   },
   {
-    question: "What is the highest placement package for BBA graduates?",
+    question: "Are hostel facilities available for engineering students?",
     answer:
-      "The highest placement package is up to ₹9 LPA, and the average package is up to ₹4 LPA.",
+      "Yes, we offer AC hostels with Wi-Fi, 24/7 security, and recreational areas.",
   },
   {
-    question: "Can I pursue MBA after BBA from Indira University?",
+    question: "Does Indira University offer scholarships for B.Tech students?",
     answer:
-      "Yes! Our BBA graduates have been placed in top B-schools including international universities.",
-  },
-  {
-    question: "Is work experience required for BBA admission?",
-    answer:
-      "No, BBA is an undergraduate programme for students directly after 12th. No work experience is required.",
+      "Yes, scholarships are available based on merit, entrance exam scores, and reserved category eligibility. Contact admissions for details.",
   },
 ];
 
@@ -43,9 +37,9 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
   return (
     <div
       className={`
-        rounded-3xl bg-white overflow-hidden transition-all duration-300
-        border border-white/10 backdrop-blur-sm
-        ${isOpen ? "shadow-2xl ring-1 ring-white/20" : "hover:shadow-xl"}
+        rounded-3xl bg-slate-50 overflow-hidden transition-all duration-300
+        border border-slate-200/80
+        ${isOpen ? "shadow-lg ring-1 ring-[#000B24]/10" : "hover:shadow-md"}
       `}
     >
       {/* Question */}
@@ -71,7 +65,7 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
             ${
               isOpen
                 ? "bg-[#990000] text-white rotate-180"
-                : "bg-[#F4F4F4] text-[#990000]"
+                : "bg-white text-[#990000] border border-slate-200"
             }
           `}
         >
@@ -110,44 +104,20 @@ function FAQ() {
       className="
         relative overflow-hidden
         px-4 sm:px-6 md:px-12 py-10 md:py-20
-        bg-[linear-gradient(90deg,#01011A_0%,#04003A_30%,#1A003F_55%,#4B003B_78%,#8B003E_100%)]
+        bg-white
       "
     >
-      {/* Decorative Glow Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        
-        {/* Left Blue Glow */}
-        <div
-          className="
-            absolute top-[15%] -left-[10%]
-            w-[500px] h-[500px]
-            rounded-full bg-[#003BFF]
-            blur-3xl
-          "
-        />
-
-        {/* Right Pink Glow */}
-        <div
-          className="
-            absolute -top-[10%] -right-[10%]
-            w-[550px] h-[550px]
-            rounded-full bg-[#FF0066]
-            blur-3xl
-          "
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#000B24] mb-4">
             Frequently Asked Questions
           </h2>
 
-          <p className="text-white/90 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most common questions about BBA course of
+          <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+            Get answers to the most common questions about the B.Tech course at
             Indira University, Maharashtra.
           </p>
         </div>

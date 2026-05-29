@@ -14,15 +14,13 @@ const TopRecruiters = () => {
   const row3 = logos.slice(itemsPerRow * 2);
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#7A0C1E] via-[#5C1233] to-[#2A0F3F] py-10 md:py-14 px-4 overflow-hidden">
+    <section className="w-full bg-gradient-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-10 md:py-14 px-4 overflow-hidden">
       <div className="w-full text-center mb-8 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
           Top Recruiters
         </h2>
         <p className="text-gray-200 text-sm md:text-base font-medium leading-relaxed opacity-90">
-          Join a legacy where industry giants meet tomorrow’s talent, proving
-          that an Indira University's BBA secures your future at the top
-          companies.
+          Recognised and trusted by 350+ leading recruiters across the nation.
         </p>
       </div>
 
