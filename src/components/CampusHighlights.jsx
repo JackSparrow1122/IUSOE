@@ -51,6 +51,15 @@ export default function CampusHighlights() {
       tl.to(cs, { yPercent: 0, ease: "none" })
         .to(sc, { yPercent: 0, ease: "none" });
 
+      // Refresh ScrollTrigger after DOM fully loads and paints
+      const refresh = () => ScrollTrigger.refresh();
+      if (document.readyState === "complete") {
+        setTimeout(refresh, 200);
+      } else {
+        window.addEventListener("load", refresh);
+      }
+      return () => window.removeEventListener("load", refresh);
+
     }, containerRef);
 
     return () => ctx.revert();

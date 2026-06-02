@@ -11,36 +11,43 @@ const students = [
   {
     name: "Mr. Shwetank Upadhyay",
     company: "CTC 27 LPA",
+    feedback: "Indira's rigorous curriculum and guidance helped me achieve this milestone.",
     image: img2,
   },
   {
     name: "Mr. Vishwajeet Ranaware",
     company: "CTC 21 LPA",
+    feedback: "The practical exposure and expert faculty mentoring were instrumental.",
     image: img1,
   },
   {
     name: "Mr. Amitsingh Tanwar",
     company: "CTC 21 LPA",
+    feedback: "Extremely grateful for the continuous support and placement training.",
     image: img3,
   },
   {
     name: "Ms. Poornima Theurkar",
     company: "CTC 21 LPA",
+    feedback: "The learning-by-doing approach here prepared me for the best opportunities.",
     image: img5,
   },
   {
     name: "Mr. Kushal Swamy",
     company: "CTC 21 LPA",
+    feedback: "A perfect platform for engineering students to hone their professional skills.",
     image: img4,
   },
   {
     name: "Mr. Siddhant Kadam",
-    company: "CTC 27 LPA",
+    company: "B.E. Computer Engineering",
+    feedback: "Comprehensive training and mock interviews made the placement process seamless.",
     image: img7,
   },
   {
     name: "Ms. Komal Verma",
-    company: "CTC 27 LPA",
+    company: "B.E. Computer Engineering",
+    feedback: "Indira's industry connections paved the way for great career opportunities.",
     image: img6,
   },
 ];
