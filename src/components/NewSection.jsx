@@ -15,7 +15,7 @@ const NewSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-0 px-6 md:px-12 text-white md:h-full md:flex md:flex-col md:justify-center">
       <div className="max-w-7xl mx-auto">
         {/* Heading & Paragraph above Horizontal Line */}
         <div className="border-b-2 border-white/10 pb-8 mb-10 flex flex-col items-center text-center">
@@ -37,52 +37,51 @@ const NewSection = () => {
             </p>
           </div>
 
-        {/* Right Side: Photo grid */}
-        <div className="w-full md:w-[60%] order-2 md:order-2">
-          {/* Mobile Grid */}
-          <div className="grid grid-cols-2 gap-3 md:hidden">
-            {events.map((ev, i) => (
-              <div 
-                key={ev.id} 
-                className={`overflow-hidden rounded-xl shadow ${
-                  i === 4 ? "col-span-2" : ""
-                }`}
-              >
-                <img
-                  src={ev.image}
-                  alt={ev.name}
-                  className={`w-full h-40 object-cover ${ev.id === 5 ? "object-top" : ""}`}
-                />
-              </div>
-            ))}
-          </div>
+          {/* Right Side: Photo grid */}
+          <div className="w-full md:w-[60%] order-2 md:order-2">
+            {/* Mobile Grid */}
+            <div className="grid grid-cols-2 gap-3 md:hidden">
+              {events.map((ev, i) => (
+                <div
+                  key={ev.id}
+                  className={`overflow-hidden rounded-xl shadow ${i === 4 ? "col-span-2" : ""
+                    }`}
+                >
+                  <img
+                    src={ev.image}
+                    alt={ev.name}
+                    className={`w-full h-40 object-cover ${ev.id === 5 ? "object-top" : ""}`}
+                  />
+                </div>
+              ))}
+            </div>
 
-          {/* Desktop Grid */}
-          <div
-            className="hidden md:grid w-full gap-2 h-[450px]"
-            style={{
-              gridTemplateColumns: "repeat(6, 1fr)",
-              gridTemplateRows: "repeat(10, 1fr)",
-            }}
-          >
-            <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={events[0].image} alt={events[0].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "5 / span 2", gridRow: "1 / span 7" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={events[1].image} alt={events[1].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "1 / span 2", gridRow: "5 / span 6" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={events[2].image} alt={events[2].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "3 / span 2", gridRow: "5 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={events[3].image} alt={events[3].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={events[4].image} alt={events[4].name} className="w-full h-full object-cover object-top" />
+            {/* Desktop Grid */}
+            <div
+              className="hidden md:grid w-full gap-2 h-[450px]"
+              style={{
+                gridTemplateColumns: "repeat(6, 1fr)",
+                gridTemplateRows: "repeat(10, 1fr)",
+              }}
+            >
+              <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={events[0].image} alt={events[0].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "5 / span 2", gridRow: "1 / span 7" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={events[1].image} alt={events[1].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "1 / span 2", gridRow: "5 / span 6" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={events[2].image} alt={events[2].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "3 / span 2", gridRow: "5 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={events[3].image} alt={events[3].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={events[4].image} alt={events[4].name} className="w-full h-full object-cover object-top" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

@@ -1,9 +1,9 @@
 import React from "react";
-import club1 from "../assets/Events/club1.jpg";
-import club2 from "../assets/Events/club2.jpg";
-import club3 from "../assets/Events/club3.jpg";
-import club4 from "../assets/Events/club4.jpg";
-import club5 from "../assets/Events/club5.jpg";
+import club1 from "../assets/Events/club2.jpeg";
+import club2 from "../assets/Events/club1.jpeg";
+import club3 from "../assets/Events/club3.jpeg";
+import club4 from "../assets/Events/club4.jpeg";
+import club5 from "../assets/Events/club5.jpeg";
 
 const StudentClubsSection = () => {
   const clubs = [
@@ -15,7 +15,7 @@ const StudentClubsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-0 px-6 md:px-12 text-white md:h-full md:flex md:flex-col md:justify-center">
       <div className="max-w-7xl mx-auto">
         {/* Top Divider Line with Red Gradient */}
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-10 opacity-15" />
@@ -32,48 +32,47 @@ const StudentClubsSection = () => {
             </p>
           </div>
 
-        {/* Right Side: Photo grid */}
-        <div className="w-full md:w-[60%] order-2 md:order-2">
-          {/* Mobile Grid */}
-          <div className="grid grid-cols-2 gap-3 md:hidden">
-            {clubs.map((c, i) => (
-              <div 
-                key={c.id} 
-                className={`overflow-hidden rounded-xl shadow ${
-                  i === 4 ? "col-span-2" : ""
-                }`}
-              >
-                <img src={c.image} alt={c.name} className="w-full h-40 object-cover" />
-              </div>
-            ))}
-          </div>
+          {/* Right Side: Photo grid */}
+          <div className="w-full md:w-[60%] order-2 md:order-2">
+            {/* Mobile Grid */}
+            <div className="grid grid-cols-2 gap-3 md:hidden">
+              {clubs.map((c, i) => (
+                <div
+                  key={c.id}
+                  className={`overflow-hidden rounded-xl shadow ${i === 4 ? "col-span-2" : ""
+                    }`}
+                >
+                  <img src={c.image} alt={c.name} className="w-full h-40 object-cover" />
+                </div>
+              ))}
+            </div>
 
-          {/* Desktop Grid */}
-          <div
-            className="hidden md:grid w-full gap-2 h-[450px]"
-            style={{
-              gridTemplateColumns: "repeat(6, 1fr)",
-              gridTemplateRows: "repeat(10, 1fr)",
-            }}
-          >
-            <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={clubs[1].image} alt={clubs[1].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "5 / span 2", gridRow: "1 / span 7" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={clubs[0].image} alt={clubs[0].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "1 / span 2", gridRow: "5 / span 6" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={clubs[2].image} alt={clubs[2].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "3 / span 2", gridRow: "5 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={clubs[3].image} alt={clubs[3].name} className="w-full h-full object-cover" />
-            </div>
-            <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img src={clubs[4].image} alt={clubs[4].name} className="w-full h-full object-cover" style={{ objectPosition: "center 18%" }} />
+            {/* Desktop Grid */}
+            <div
+              className="hidden md:grid w-full gap-2 h-[450px]"
+              style={{
+                gridTemplateColumns: "repeat(6, 1fr)",
+                gridTemplateRows: "repeat(10, 1fr)",
+              }}
+            >
+              <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={clubs[1].image} alt={clubs[1].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "5 / span 2", gridRow: "1 / span 7" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={clubs[0].image} alt={clubs[0].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "1 / span 2", gridRow: "5 / span 6" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={clubs[2].image} alt={clubs[2].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "3 / span 2", gridRow: "5 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={clubs[3].image} alt={clubs[3].name} className="w-full h-full object-cover" />
+              </div>
+              <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src={clubs[4].image} alt={clubs[4].name} className="w-full h-full object-cover" style={{ objectPosition: "center 18%" }} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

@@ -5,42 +5,28 @@ import AboutUs from "./components/AboutUs";
 import WhyChooseEngineering from "./components/WhyChooseEngineering";
 import ApplyProcess from "./components/ApplyProcess";
 import TopRecruiters from "./components/TopRecruiters";
-import NewSection from "./components/NewSection";
-import CampusHighlightsSection from "./components/CampusHighlightsSection";
-import StudentClubsSection from "./components/StudentClubsSection";
+import CampusHighlights from "./components/CampusHighlights";
 import FAQ from "./components/FAQ";
-
-
-
-
 import ProgramOverview from "./components/ProgramOverview";
-// import RecruitersStats from "./components/RecruitersStats";
-// import OurCourse from "./components/OurCourse";
+import RecruitersStats from "./components/RecruitersStats";
+import OurCourse from "./components/OurCourse";
 import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <Hero />
-          <AboutUs />
- 
-      {/* <CourseDetails /> */}
-  
-    
-
-      {/* <RecruitersStats /> */}
-        <TopRecruiters />
-             <ProgramOverview />
-      {/* <OurCourse /> */}
+      <CourseDetails />
+      <TopRecruiters />
+      <RecruitersStats />
+      <AboutUs />
+      <ProgramOverview />
       <WhyChooseEngineering />
+      <OurCourse />
+      <CampusHighlights />
       <ApplyProcess />
-    
-      <NewSection />
-      <CampusHighlightsSection />
-      <StudentClubsSection />
       <FAQ />
-        {/* <WhyUs /> */}
-      {/* <CampusHighlight /> */}
+      {/* <WhyUs /> */}
       <Footer />
     </>
   );

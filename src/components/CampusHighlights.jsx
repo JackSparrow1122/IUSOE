@@ -10,13 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * CampusHighlights
  *
- * Scroll-stack animation:
- *   1. NewSection is pinned while CampusHighlightsSection slides up over it.
- *   2. CampusHighlightsSection is then pinned while StudentClubsSection slides up over it.
- *   3. StudentClubsSection unpins and the page continues normally.
- *
- * The three sections share a single stacking container so z-indices are
- * predictable and no other part of the page is affected.
+ * Stacking Panels Scroll Animation:
+ *   - On Mobile: Sections stack and render vertically in one normal column.
+ *   - On Desktop: The parent container is pinned, and Slide 2 & Slide 3
+ *     slide up over Slide 1 dynamically as the user scrolls.
  */
 export default function CampusHighlights() {
   const containerRef = useRef(null);
@@ -25,93 +22,65 @@ export default function CampusHighlights() {
   const clubsRef = useRef(null);
 
   useLayoutEffect(() => {
-    // Wait one tick so the DOM has painted and heights are real
+    // Only run scroll-stacking animations on desktop/tablet (width >= 768px)
+    if (window.innerWidth < 768) return;
+
     const ctx = gsap.context(() => {
       const ns = newSectionRef.current;
       const cs = campusRef.current;
       const sc = clubsRef.current;
       if (!ns || !cs || !sc) return;
 
-      // ── Section 1 → Section 2 ──────────────────────────────────────────────
-      // Pin NewSection; slide CampusHighlightsSection from below up to y=0
-      gsap.set(cs, { y: "100%" });
-
-      ScrollTrigger.create({
-        trigger: ns,
-        start: "top top",
-        end: "+=100%",        // scroll distance = one viewport height
-        pin: true,
-        pinSpacing: false,    // section 2 is already in the stack — no gap
-        scrub: true,
-        onUpdate: (self) => {
-          // As progress goes 0→1, slide section 2 from +100% → 0%
-          gsap.set(cs, { y: `${(1 - self.progress) * 100}%` });
+      // Pin the outer container and slide the overlays sequentially
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=200%",        // 200% of viewport height scroll distance
+          pin: true,
+          scrub: true,
+          anticipatePin: 1,
         },
       });
 
-      // ── Section 2 → Section 3 ──────────────────────────────────────────────
-      // Pin CampusHighlightsSection; slide StudentClubsSection from below up
-      gsap.set(sc, { y: "100%" });
+      // Set initial states: keep overlay slides off-screen below
+      gsap.set(cs, { yPercent: 100 });
+      gsap.set(sc, { yPercent: 100 });
 
-      ScrollTrigger.create({
-        trigger: cs,
-        start: "top top",
-        end: "+=100%",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.set(sc, { y: `${(1 - self.progress) * 100}%` });
-        },
-      });
+      // Slide them up one by one
+      tl.to(cs, { yPercent: 0, ease: "none" })
+        .to(sc, { yPercent: 0, ease: "none" });
 
-      // Refresh after all images have loaded so heights are correct
-      const refresh = () => ScrollTrigger.refresh();
-      window.addEventListener("load", refresh);
-      return () => window.removeEventListener("load", refresh);
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    /**
-     * The outer container just groups the three sections.
-     * `overflow: hidden` clips the sections that are still off-screen below.
-     * Each inner wrapper is `position: sticky` at the OS level; GSAP's pin
-     * mechanism takes over on scroll.
-     */
-    <div ref={containerRef} style={{ position: "relative", overflow: "hidden" }}>
-
-      {/* ── 01 Events & Annual Celebrations ── */}
+    <div
+      ref={containerRef}
+      className="relative w-full md:h-screen md:overflow-hidden bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035]"
+    >
+      {/* Slide 1: Events */}
       <div
         ref={newSectionRef}
-        style={{ position: "relative", zIndex: 1, willChange: "transform" }}
+        className="relative md:absolute md:inset-0 w-full md:h-full z-10 will-change-transform"
       >
         <NewSection />
       </div>
 
-      {/* ── 02 Campus Facilities & Infrastructure ── */}
+      {/* Slide 2: Facilities */}
       <div
         ref={campusRef}
-        style={{
-          position: "relative",
-          zIndex: 2,
-          willChange: "transform",
-          /* starts translated 100% down; GSAP drives it to 0 */
-        }}
+        className="relative md:absolute md:inset-0 w-full md:h-full z-20 will-change-transform"
       >
         <CampusHighlightsSection />
       </div>
 
-      {/* ── 03 Student Clubs ── */}
+      {/* Slide 3: Clubs */}
       <div
         ref={clubsRef}
-        style={{
-          position: "relative",
-          zIndex: 3,
-          willChange: "transform",
-        }}
+        className="relative md:absolute md:inset-0 w-full md:h-full z-30 will-change-transform"
       >
         <StudentClubsSection />
       </div>

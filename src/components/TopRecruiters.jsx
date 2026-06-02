@@ -6,6 +6,11 @@ const logos = Object.entries(logoModules)
   .filter(([path]) => !path.endsWith("/44.jpg"))
   .map(([_, mod]) => mod.default);
 
+const RECRUITERS_CONTENT = {
+  title: "Top Recruiters",
+  description: "Trusted by 350+ Leading Recruiters of India"
+};
+
 const TopRecruiters = () => {
   // Split the loaded logos into 3 rows for the desktop marquee
   const itemsPerRow = Math.ceil(logos.length / 3);
@@ -17,10 +22,10 @@ const TopRecruiters = () => {
     <section className="w-full bg-gradient-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-10 md:py-14 px-4 overflow-hidden">
       <div className="w-full text-center mb-8 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
-          Top Recruiters
+          {RECRUITERS_CONTENT.title}
         </h2>
         <p className="text-gray-200 text-sm md:text-base font-medium leading-relaxed opacity-90">
-          Recognised and trusted by 350+ leading recruiters across the nation.
+          {RECRUITERS_CONTENT.description}
         </p>
       </div>
 

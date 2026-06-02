@@ -4,12 +4,26 @@ import HeroBg from "../assets/HeroImg.png";
 import Icon1 from "../assets/icon5.png";
 import Icon2 from "../assets/icon6.png";
 import Icon3 from "../assets/icon7.png";
+import Icon4 from "../assets/icon8.png";
 
 const stats = [
-  { icon: Icon1, title: "31+", subtitle: "Years of Legacy" },
+  { icon: Icon1, title: "20+", subtitle: "Years of Engineering Legacy" },
   { icon: Icon2, title: "350+", subtitle: "Top Recruiters" },
-  { icon: Icon3, title: "100%", subtitle: "Placement Support" },
+  { icon: Icon3, title: "100%", subtitle: "Guaranteed Placement Opportunities" },
+  { icon: Icon4, title: "27 LPA", subtitle: "Highest CTC" },
 ];
+
+const HERO_CONTENT = {
+  limitedSeats: "LIMITED SEATS",
+  heading: ["Shape the Future with a B.Tech in Computer Science & Engineering at Indira University "],
+  description: "Specialise in Artificial Intelligence & Data Science or Cyber Security & Cloud Technology.",
+  subText: "Gain hands-on experience in machine learning, deep learning, cloud security, and DevOps with 20+ years of engineering legacy, smart labs, and 300+ top recruiters. ",
+  admissionTag: "Admission open for 2026-2027",
+  buttons: {
+    apply: "APPLY NOW",
+    brochure: "Download brochure",
+  }
+};
 
 const Hero = () => {
   return (
@@ -33,37 +47,39 @@ const Hero = () => {
           <div className="flex items-center justify-between px-4 py-3 bg-[#000B2E]">
             <img src={IUlogo} alt="IU Logo" className="h-10 object-contain" />
             <div className="border border-white/20 bg-white/10 px-3 py-1 rounded-full text-white text-[10px] font-semibold tracking-wide">
-              LIMITED SEATS
+              {HERO_CONTENT.limitedSeats}
             </div>
           </div>
 
           {/* Body */}
           <div className="flex-1 flex flex-col justify-center px-5 pb-8 pt-6">
             {/* Heading */}
-            <h1 className="text-white font-extrabold leading-[0.95] text-[2.4rem]">
-              <span className="block">ENGINEER</span>
-              <span className="block">INTELLIGENCE</span>
-              <span className="block">FOR THE FUTURE.</span>
+            <h1 className="text-white font-extrabold leading-[0.95] text-[2.2rem]">
+              {HERO_CONTENT.heading.map((line, index) => (
+                <span key={index} className="block">{line}</span>
+              ))}
             </h1>
 
             {/* Description */}
             <p className="text-white/80 text-sm leading-relaxed mt-4">
-              Future-ready Computer Science, Artificial Intelligence & Data
-              Science, and Cyber Security programmes designed to build
-              innovators, problem-solvers, and industry leaders.
+              {HERO_CONTENT.description}
+            </p>
+
+            <p className="text-white/60 text-xs md:text-sm mt-2">
+              {HERO_CONTENT.subText}
             </p>
 
             {/* Admission tag */}
             <div className="mt-4 inline-flex items-center self-start border border-white/20 bg-white/5 px-4 py-2 rounded-lg shadow-lg">
               <p className="text-white text-xs font-medium">
-                Admission open for 2026-2027
+                {HERO_CONTENT.admissionTag}
               </p>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-col gap-3 mt-5">
               <button className="w-full bg-[#E3003A] hover:bg-[#c00032] transition-all duration-300 text-white px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-3 shadow-xl">
-                <span>APPLY NOW</span>
+                <span>{HERO_CONTENT.buttons.apply}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -80,7 +96,7 @@ const Hero = () => {
                 </svg>
               </button>
               <button className="w-full border border-white/20 bg-white/5 hover:bg-white/15 backdrop-blur-sm text-white px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-3">
-                <span>Download brochure</span>
+                <span>{HERO_CONTENT.buttons.brochure}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -109,11 +125,11 @@ const Hero = () => {
                 <div key={index} className="flex items-center gap-2">
                   <img
                     src={item.icon}
-                    alt={item.title}
+                    alt=""
                     className="w-7 h-7 object-contain flex-shrink-0"
                   />
                   <div>
-                    <p className="text-white text-sm font-semibold leading-none">
+                    <p className="text-white text-sm font-semibold leading-none whitespace-nowrap">
                       {item.title}
                     </p>
                     <p className="text-white/70 text-[10px] leading-snug mt-0.5">
@@ -150,7 +166,7 @@ const Hero = () => {
               className="h-14 md:h-16 object-contain"
             />
             <div className="border border-white/20 bg-white/10 px-4 py-1.5 rounded-full text-white text-xs md:text-sm font-semibold">
-              LIMITED SEATS
+              {HERO_CONTENT.limitedSeats}
             </div>
           </div>
 
@@ -158,34 +174,32 @@ const Hero = () => {
           <div className="flex-1 flex items-center px-5 md:px-14 pb-6">
             <div className="max-w-2xl">
               {/* Heading */}
-              <h1 className="text-white font-extrabold leading-[0.92]">
-                <span className="block text-4xl md:text-6xl">ENGINEER</span>
-                <span className="block text-4xl md:text-6xl">
-                  INTELLIGENCE
-                </span>
-                <span className="block text-4xl md:text-6xl">
-                  FOR THE FUTURE.
-                </span>
+              <h1 className="text-white font-extrabold leading-[0.92] text-3xl md:text-6xl">
+                {HERO_CONTENT.heading.map((line, index) => (
+                  <span key={index} className="block">{line}</span>
+                ))}
               </h1>
 
               {/* Description */}
               <p className="text-white/90 text-sm md:text-lg leading-relaxed mt-5 max-w-xl">
-                Future-ready Computer Science, Artificial Intelligence &amp; Data
-                Science, and Cyber Security programmes designed to build
-                innovators, problem-solvers, and industry leaders.
+                {HERO_CONTENT.description}
+              </p>
+
+              <p className="text-white/60 text-xs md:text-sm mt-2 max-w-xl">
+                {HERO_CONTENT.subText}
               </p>
 
               {/* Admission Tag */}
               <div className="mt-5 inline-flex items-center border border-white/20 bg-white/5 px-5 py-3 rounded-r-xl rounded-l-md shadow-lg">
                 <p className="text-white text-sm md:text-lg font-medium">
-                  Admission open for 2026-2027
+                  {HERO_CONTENT.admissionTag}
                 </p>
               </div>
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-4 mt-5">
                 <button className="bg-[#E3003A] hover:bg-[#c00032] transition-all duration-300 text-white px-6 py-3 rounded-lg text-sm md:text-base font-bold flex items-center gap-3 shadow-xl">
-                  <span>APPLY NOW</span>
+                  <span>{HERO_CONTENT.buttons.apply}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -201,28 +215,7 @@ const Hero = () => {
                     />
                   </svg>
                 </button>
-                <button className="border border-white/20 bg-white/5 hover:bg-white/15 backdrop-blur-sm transition-all duration-300 text-white px-6 py-3 rounded-lg text-sm md:text-base font-semibold flex items-center gap-3">
-                  <span>Download brochure</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 3v12m0 0l4-4m-4 4l-4-4"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 17v1a2 2 0 002 2h12a2 2 0 002-2v-1"
-                    />
-                  </svg>
-                </button>
+
               </div>
 
               {/* Stats */}
@@ -234,11 +227,11 @@ const Hero = () => {
                   >
                     <img
                       src={item.icon}
-                      alt={item.title}
+                      alt=""
                       className="w-9 h-9 object-contain"
                     />
                     <div className="flex flex-col">
-                      <h3 className="text-white text-base font-semibold leading-none">
+                      <h3 className="text-white text-base font-semibold leading-none whitespace-nowrap">
                         {item.title}
                       </h3>
                       <p className="text-white/90 text-xs leading-snug mt-1">

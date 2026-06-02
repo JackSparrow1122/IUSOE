@@ -3,38 +3,36 @@ import { FaArrowDown } from "react-icons/fa";
 
 /* ---------------- FAQ DATA ---------------- */
 
-const FAQ_DATA = [
-  {
-    question: "What is the eligibility for B.Tech admission?",
-    answer:
-      "You must have passed 10+2 with PCM or PCB, securing at least 45% aggregate (40% for reserved categories).",
-  },
-  {
-    question: "Which entrance exams are accepted?",
-    answer:
-      "We accept valid scores from MHT-CET / JEE Main / SAT / IUCET.",
-  },
-  {
-    question: "Does the university provide internship opportunities?",
-    answer:
-      "Yes, mandatory industry internships are integrated into the curriculum.",
-  },
-  {
-    question: "Are hostel facilities available for engineering students?",
-    answer:
-      "Yes, we offer AC hostels with Wi-Fi, 24/7 security, and recreational areas.",
-  },
-  {
-    question: "Does Indira University offer scholarships for B.Tech students?",
-    answer:
-      "Yes, scholarships are available based on merit, entrance exam scores, and reserved category eligibility. Contact admissions for details.",
-  },
-  {
-    question: "What kind of placement support does the university offer?",
-    answer:
-      "We have a dedicated corporate relations and placement cell that organizes campus recruitment drives, mock interviews, and resume-building workshops, helping students secure placements with leading tech companies.",
-  },
-];
+const FAQ_CONTENT = {
+  sectionTitle: "Frequently Asked Questions",
+  sectionDesc: "Get answers to the most common questions about the B.Tech course at Indira University, Maharashtra.",
+  faqs: [
+    {
+      question: "What is the duration of the B.Tech programme?",
+      answer: "The B.Tech programme is 4 years, divided into 8 semesters.",
+    },
+    {
+      question: "What specialisations are offered under B.Tech CSE?",
+      answer: "Artificial Intelligence & Data Science and Cyber Security & Cloud Technology.",
+    },
+    {
+      question: "What is the fee structure for B.Tech?",
+      answer: "1st Year: ₹2,50,000",
+    },
+    {
+      question: "Is there any financial aid or scholarship available?",
+      answer: "Yes, Indira University offers scholarships based on merit, entrance exam scores, and reserved category eligibility. Financial assistance is also available for students with demonstrated need. Contact the admissions office for details.",
+    },
+    {
+      question: "What entrance exams are accepted?",
+      answer: "MHT-CET, JEE Main, SAT, and IUCET.",
+    },
+    {
+      question: "Does the university provide internship support?",
+      answer: "Yes, mandatory industry internships are part of the curriculum with placement cell support.",
+    },
+  ]
+};
 
 /* ---------------- ACCORDION ITEM ---------------- */
 
@@ -118,18 +116,17 @@ function FAQ() {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold text-[#000B24] mb-4">
-            Frequently Asked Questions
+            {FAQ_CONTENT.sectionTitle}
           </h2>
 
           <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most common questions about the B.Tech course at
-            Indira University, Maharashtra.
+            {FAQ_CONTENT.sectionDesc}
           </p>
         </div>
 
         {/* FAQ Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {FAQ_DATA.map((item, index) => (
+          {FAQ_CONTENT.faqs.map((item, index) => (
             <AccordionItem
               key={index}
               item={item}

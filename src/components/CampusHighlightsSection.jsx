@@ -15,14 +15,14 @@ const CampusHighlightsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-gradient-to-b from-[#8B0035] via-[#14002E] to-[#8B0035] py-12 md:py-0 px-6 md:px-12 text-white md:h-full md:flex md:flex-col md:justify-center">
       <div className="max-w-7xl mx-auto">
         {/* Top Divider Line with Red Gradient */}
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-10 opacity-15" />
 
         {/* Main Content: Flex column on mobile (text then image), Row on desktop */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
-          
+
           {/* Text Content: order-1 on mobile, order-2 on desktop */}
           <div className="w-full md:w-[40%] space-y-6 order-1 md:order-2">
             <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -42,11 +42,10 @@ const CampusHighlightsSection = () => {
             {/* Mobile Grid (2 columns, 5th image takes full width) */}
             <div className="grid grid-cols-2 gap-3 md:hidden">
               {facilities.map((f, i) => (
-                <div 
-                  key={f.id} 
-                  className={`overflow-hidden rounded-xl shadow ${
-                    i === 4 ? "col-span-2" : ""
-                  }`}
+                <div
+                  key={f.id}
+                  className={`overflow-hidden rounded-xl shadow ${i === 4 ? "col-span-2" : ""
+                    }`}
                 >
                   <img src={f.image} alt={f.name} className="w-full h-40 object-cover" />
                 </div>
