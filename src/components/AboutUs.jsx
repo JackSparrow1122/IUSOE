@@ -1,6 +1,5 @@
 import React from "react";
 import overviewImg from "../assets/IU.jpg";
-import curvedImg from "../assets/stamp.png";
 
 const ABOUT_CONTENT = {
   title: "About the School of Engineering – Indira University",
@@ -11,7 +10,7 @@ const ABOUT_CONTENT = {
 
 function AboutUs() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+    <section className="w-full bg-white py-12 md:py-12 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="w-full md:w-[45%] space-y-6">
@@ -36,13 +35,6 @@ function AboutUs() {
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
             />
           </div>
-
-          {/* Top Right Overlay PNG */}
-          <img
-            src={curvedImg}
-            alt="Decoration"
-            className="absolute -top-12 -right-10 w-[100px] sm:w-[130px] md:w-[160px] h-auto object-contain pointer-events-none drop-shadow-lg z-10"
-          />
         </div>
       </div>
     </section>

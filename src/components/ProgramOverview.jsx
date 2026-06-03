@@ -73,7 +73,7 @@ const ProgramOverview = () => {
   };
 
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="w-full bg-white py-2 md:py-8 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Top Section */}
 
       <div className="mb-10 md:mb-14">

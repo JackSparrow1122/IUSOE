@@ -27,9 +27,24 @@ const StudentClubsSection = () => {
             <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
               Engineering Student Clubs
             </h3>
-            <p className="text-sm md:text-lg text-slate-200 leading-relaxed text-justify">
-              Swakiyam Foundation for Incubation and Innovation offers mentorship, and a world-class incubation centre for entrepreneurs. And other student clubs to help you learn, compete and lead teams to grow holistically. These clubs build leadership, networking, and CV skills. Secure your B.Tech seat 2026 at Pune's best engineering college.
-            </p>
+            <div className="space-y-4">
+              <p className="text-sm md:text-lg text-slate-200 leading-relaxed">
+                Opportunities to learn, lead, compete, and grow holistically through our exclusive clubs:
+              </p>
+              <ul className="space-y-3 pl-1">
+                {[
+                  "Coder's Club",
+                  "Quant Club",
+                  "Hackathon Club",
+                  "Swakiyam Foundation for Incubation and Innovation"
+                ].map((club, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-slate-200 text-sm md:text-base">
+                    <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#1E62EC] shadow-[0_0_6px_#1E62EC]" />
+                    <span className="font-semibold leading-tight">{club}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Right Side: Photo grid */}

@@ -1,5 +1,6 @@
 import IUlogo from "../assets/IULogo.png";
 import HeroBg from "../assets/HeroImg.png";
+import curvedImg from "../assets/stamp.png";
 
 import Icon1 from "../assets/icon5.png";
 import Icon2 from "../assets/icon6.png";
@@ -16,10 +17,11 @@ const stats = [
 const HERO_CONTENT = {
   limitedSeats: "LIMITED SEATS",
   heading: [
-    "India's First Domain Specific",
-    "Industry Led Programme"
+    "Join India's Most Future-Ready  ",
+    "B.Tech Programme",
+
   ],
-  description: " Get directly mentored by Industry Experts  ",
+  description: "Specialise in Artificial Intelligence & Data Science or Cyber Security & Cloud Computing. Learn through hackathons, live projects, and innovation labs. 350+ recruiters are waiting for you.",
   subText: (
     <>
       Enrol for <span className="font-bold text-[#E3003A]">B.Tech in CSE</span> under <span className="font-bold text-[#E3003A]">School of Engineering (SOE)</span> to be a part of the Exclusive Coder's Club
@@ -62,6 +64,13 @@ const Hero = () => {
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/55" />
+
+        {/* Curved Stamp Decoration (Half Navbar / Half Hero Body) */}
+        <img
+          src={curvedImg}
+          alt="Indira University Stamp"
+          className="absolute top-[90px] right-3 w-[70px] h-auto object-contain pointer-events-none drop-shadow-xl z-20 transform -translate-y-1/2"
+        />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col h-auto">
@@ -160,6 +169,7 @@ const Hero = () => {
                       src={item.icon}
                       alt=""
                       className="w-4 h-4 object-contain"
+                      style={{ filter: 'brightness(0) saturate(100%) invert(31%) sepia(83%) saturate(3474%) hue-rotate(213deg) brightness(97%) contrast(91%)' }}
                     />
                   </div>
                   <div className="flex flex-col text-left">
@@ -189,6 +199,13 @@ const Hero = () => {
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Curved Stamp Decoration (Half Navbar / Half Hero Body) */}
+        <img
+          src={curvedImg}
+          alt="Indira University Stamp"
+          className="absolute top-[72px] lg:top-[88px] xl:top-[98px] right-6 lg:right-16 w-[100px] md:w-[130px] lg:w-[155px] h-auto object-contain pointer-events-none drop-shadow-xl z-20 transform -translate-y-1/2"
+        />
 
         {/* Main Content */}
         <div className="relative z-10 min-h-screen flex flex-col">
@@ -236,9 +253,7 @@ const Hero = () => {
                 </p>
 
                 {/* Subtext */}
-                <p className="text-white/70 text-xs sm:text-sm md:text-base mt-2 leading-relaxed">
-                  {HERO_CONTENT.subText}
-                </p>
+
 
                 {/* Admission Tag */}
                 <p className="mt-2 text-sm sm:text-base md:text-lg bg-[#1E62EC] text-white px-4 py-1.5 rounded-xl inline-block font-semibold w-fit shadow-[0_4px_20px_rgba(30,98,236,0.3)]">
@@ -258,6 +273,7 @@ const Hero = () => {
                           src={item.icon}
                           alt=""
                           className="w-5 h-5 lg:w-5.5 lg:h-5.5 object-contain"
+                          style={{ filter: 'brightness(0) saturate(100%) invert(31%) sepia(83%) saturate(3474%) hue-rotate(213deg) brightness(97%) contrast(91%)' }}
                         />
                       </div>
                       <div className="flex flex-col text-left">
@@ -271,10 +287,13 @@ const Hero = () => {
                     </div>
                   ))}
                 </div>
+                <p className="text-white/70 text-xs sm:text-sm md:text-base mt-2 leading-relaxed">
+                  {HERO_CONTENT.subText}
+                </p>
               </div>
 
               {/* Right Column: NPF Form Container */}
-              <div className="w-full md:w-[42%] flex justify-center md:justify-end">
+              <div className="w-full md:w-[32%] flex justify-center md:justify-end">
                 <div className="w-full max-w-md bg-black/40 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/10 flex flex-col">
 
                   <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
