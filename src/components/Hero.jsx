@@ -1,6 +1,6 @@
 import IUlogo from "../assets/IULogo.png";
 import HeroBg from "../assets/HeroImg.png";
-import curvedImg from "../assets/stamp.png";
+import curvedImg from "../assets/stamp4.png";
 
 import Icon1 from "../assets/icon5.png";
 import Icon2 from "../assets/icon6.png";
@@ -128,21 +128,32 @@ const Hero = () => {
               <div id="npf-mobile-form" className="w-full">
                 <form className="space-y-2.5" onSubmit={(e) => e.preventDefault()}>
                   <input
+                    id="mobile-name"
+                    name="name"
                     type="text"
+                    autoComplete="name"
                     placeholder="Enter Name"
                     className="w-full h-9 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                   />
                   <input
+                    id="mobile-email"
+                    name="email"
                     type="email"
+                    autoComplete="email"
                     placeholder="Enter Email Address"
                     className="w-full h-9 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                   />
                   <input
+                    id="mobile-phone"
+                    name="phone"
                     type="tel"
+                    autoComplete="tel"
                     placeholder="Enter Mobile Number"
                     className="w-full h-9 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                   />
                   <select
+                    id="mobile-course"
+                    name="course"
                     className="w-full h-9 bg-[#000B2E]/90 border border-white/10 focus:border-white/30 focus:bg-[#000B2E]/10 transition-all rounded-lg px-3 text-white/70 text-xs outline-none"
                     defaultValue=""
                   >
@@ -158,7 +169,7 @@ const Hero = () => {
             </div>
 
             {/* Stats for Mobile (2x2 Grid) */}
-            <div className="grid grid-cols-2 gap-y-4 gap-x-2.5 mt-5 w-full max-w-sm border-t border-white/10 pt-4">
+            <div className="grid grid-cols-2 gap-y-4 gap-x-20 mt-5 w-full max-w-md border-t border-white/10 pt-4">
               {stats.map((item, index) => (
                 <div
                   key={index}
@@ -204,7 +215,7 @@ const Hero = () => {
         <img
           src={curvedImg}
           alt="Indira University Stamp"
-          className="absolute top-[72px] lg:top-[88px] xl:top-[98px] right-6 lg:right-16 w-[100px] md:w-[130px] lg:w-[155px] h-auto object-contain pointer-events-none drop-shadow-xl z-20 transform -translate-y-1/2"
+          className="absolute top-[72px] lg:top-[120px]  right-6 lg:right-16 w-[100px] md:w-[130px] lg:w-[155px] h-auto object-contain pointer-events-none drop-shadow-xl z-20 transform -translate-y-1/2"
         />
 
         {/* Main Content */}
@@ -298,21 +309,32 @@ const Hero = () => {
 
                   <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                     <input
+                      id="desktop-name"
+                      name="name"
                       type="text"
+                      autoComplete="name"
                       placeholder="Enter Name"
                       className="w-full h-10 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                     />
                     <input
+                      id="desktop-email"
+                      name="email"
                       type="email"
+                      autoComplete="email"
                       placeholder="Enter Email Address"
                       className="w-full h-10 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                     />
                     <input
+                      id="desktop-phone"
+                      name="phone"
                       type="tel"
+                      autoComplete="tel"
                       placeholder="Enter Mobile Number"
                       className="w-full h-10 bg-white/5 border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all rounded-lg px-3 text-white text-xs outline-none placeholder:text-white/40"
                     />
                     <select
+                      id="desktop-course"
+                      name="course"
                       className="w-full h-10 bg-[#000B2E]/90 border border-white/10 focus:border-white/30 focus:bg-[#000B2E]/10 transition-all rounded-lg px-3 text-white/70 text-xs outline-none"
                       defaultValue=""
                     >
