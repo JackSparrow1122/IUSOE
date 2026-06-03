@@ -18,6 +18,12 @@ const TopRecruiters = () => {
   const row2 = logos.slice(itemsPerRow, itemsPerRow * 2);
   const row3 = logos.slice(itemsPerRow * 2);
 
+  // Helper to repeat the logo array to fill the screen width and enable seamless loop
+  const repeatToFill = (arr) => {
+    if (!arr || arr.length === 0) return [];
+    return Array(6).fill(arr).flat();
+  };
+
   return (
     <section className="w-full bg-gradient-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-10 md:py-14 px-4 overflow-hidden">
       <div className="w-full text-center mb-8 max-w-5xl mx-auto">
@@ -52,7 +58,7 @@ const TopRecruiters = () => {
         {/* Row 1: Left to Right */}
         <div className="relative flex overflow-x-hidden">
           <div className="animate-marquee flex whitespace-nowrap gap-4 items-center py-2">
-            {row1.concat(row1).map((logo, index) => (
+            {repeatToFill(row1).map((logo, index) => (
               <div
                 key={`row1-${index}`}
                 className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
@@ -70,7 +76,7 @@ const TopRecruiters = () => {
         {/* Row 2: Right to Left */}
         <div className="relative flex overflow-x-hidden">
           <div className="animate-marquee-reverse flex whitespace-nowrap gap-4 items-center py-2">
-            {row2.concat(row2).map((logo, index) => (
+            {repeatToFill(row2).map((logo, index) => (
               <div
                 key={`row2-${index}`}
                 className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
@@ -88,7 +94,7 @@ const TopRecruiters = () => {
         {/* Row 3: Left to Right */}
         <div className="relative flex overflow-x-hidden">
           <div className="animate-marquee flex whitespace-nowrap gap-4 items-center py-2">
-            {row3.concat(row3).map((logo, index) => (
+            {repeatToFill(row3).map((logo, index) => (
               <div
                 key={`row3-${index}`}
                 className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"

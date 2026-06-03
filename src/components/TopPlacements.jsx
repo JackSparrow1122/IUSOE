@@ -40,13 +40,13 @@ const students = [
   },
   {
     name: "Mr. Siddhant Kadam",
-    company: "B.E. Computer Engineering",
+    company: "CTC 27 LPA",
     feedback: "Comprehensive training and mock interviews made the placement process seamless.",
     image: img7,
   },
   {
     name: "Ms. Komal Verma",
-    company: "B.E. Computer Engineering",
+    company: "CTC 26 LPA",
     feedback: "Indira's industry connections paved the way for great career opportunities.",
     image: img6,
   },

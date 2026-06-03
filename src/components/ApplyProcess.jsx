@@ -19,51 +19,46 @@ const APPLY_CONTENT = {
 
 function ApplyProcess() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="w-full bg-white py-8 md:py-16 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center">
       {/* Main Heading */}
-      <div className="mb-12 border-b-2 border-gray-100 pb-6">
-        <h2 className="text-2xl md:text-3xl font-black text-[#000B24]">
-          {APPLY_CONTENT.mainHeading}
-        </h2>
-      </div>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#1E3050] text-center mb-4 md:mb-6 max-w-3xl leading-snug">
+        {APPLY_CONTENT.mainHeading}
+      </h2>
 
-      {/* Steps List: All cards visible together and responsive */}
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12 sm:mb-16">
+      {/* Steps List */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-1.5 lg:gap-4 w-full max-w-6xl mb-5">
         {APPLY_CONTENT.steps.map((stepText, idx) => (
-          <div
-            key={idx}
-            className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.33%-16px)] lg:flex-1 min-w-[200px] flex flex-col bg-slate-50 border border-slate-200 rounded-tl-[1.5rem] rounded-br-[1.5rem] sm:rounded-tl-[2rem] sm:rounded-br-[2rem] p-4 sm:p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-          >
-            <div className="flex items-start gap-3 sm:gap-4">
-              <span className="text-sm sm:text-lg font-black text-white bg-[#000B24] w-8 h-8 sm:w-10 sm:h-10 rounded-tl-lg rounded-br-lg sm:rounded-tl-xl sm:rounded-br-xl flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                {String(idx + 1).padStart(2, "0")}
-              </span>
-              <h4 className="text-sm sm:text-base font-bold text-[#000B24] leading-snug">
+          <React.Fragment key={idx}>
+            {/* Card */}
+            <div className="w-[200px] md:w-[130px] lg:w-[185px] xl:w-[200px] h-[110px] md:h-[130px] bg-gradient-to-b from-[#1E52E8] to-[#0A1633] rounded-tl-[2.5rem] lg:rounded-tl-[3.5rem] rounded-br-[2.5rem] lg:rounded-br-[3.5rem] rounded-tr-none rounded-bl-none shadow-[0_10px_25px_rgba(10,22,51,0.3)] flex items-center justify-center p-4 lg:p-5 select-none hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <p className="text-white text-center text-xs md:text-[10px] lg:text-xs xl:text-sm font-medium leading-normal lg:leading-relaxed">
                 {stepText}
-              </h4>
+              </p>
             </div>
-          </div>
+
+            {/* Arrow (render only if not the last item) */}
+            {idx < APPLY_CONTENT.steps.length - 1 && (
+              <div className="flex items-center justify-center my-1 md:my-0 flex-shrink-0">
+                <svg
+                  className="w-5 h-5 md:w-3 md:h-3 lg:w-5 lg:h-5 text-gray-800 transform rotate-90 md:rotate-0 filter drop-shadow-sm"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </div>
 
-      {/* Eligibility Section */}
-      <div className="w-full">
-        <h3 className="text-2xl md:text-3xl font-black text-[#000B24] mb-6 sm:mb-8">
-          {APPLY_CONTENT.eligibilityHeading}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          {APPLY_CONTENT.criteria.map((criterion, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-50 border border-slate-200 rounded-tl-xl rounded-br-xl sm:rounded-tl-2xl sm:rounded-br-2xl p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center min-h-[80px] sm:min-h-[100px]"
-            >
-              <p className="text-slate-700 text-xs sm:text-sm md:text-base font-medium">
-                {criterion}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+
     </section>
   );
 }

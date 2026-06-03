@@ -4,6 +4,7 @@ import AboutUs from "./components/AboutUs";
 // import WhyUs from "./components/WhyUs";
 import WhyChooseEngineering from "./components/WhyChooseEngineering";
 import ApplyProcess from "./components/ApplyProcess";
+import EligibilityCriteria from "./components/EligibilityCriteria";
 import TopRecruiters from "./components/TopRecruiters";
 import CampusHighlights from "./components/CampusHighlights";
 import FAQ from "./components/FAQ";
@@ -25,6 +26,7 @@ function App() {
       <OurCourse />
       <CampusHighlights />
       <ApplyProcess />
+      <EligibilityCriteria />
       <FAQ />
       {/* <WhyUs /> */}
       <Footer />

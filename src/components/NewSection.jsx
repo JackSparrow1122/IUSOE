@@ -15,10 +15,10 @@ const NewSection = () => {
   ];
 
   return (
-    <section className="w-full bg-transparent py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-transparent pt-12 pb-2 md:pt-16 md:pb-4 px-6 md:px-12 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Heading & Paragraph above Horizontal Line */}
-        <div className="border-b-2 border-white/10 pb-8 mb-10 flex flex-col items-center text-center">
+        <div className="border-b-2 border-white/10 pb-8 mb-6 flex flex-col items-center text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Campus Highlights</h2>
           <p className="text-sm md:text-lg text-slate-200 leading-relaxed max-w-4xl mx-auto">
             Indira's engineering campus offers smart classrooms, innovation and entrepreneurship centre for student startups, AC hostels with Wi-Fi, sports complex, and a 24/7 medical centre. Our dedicated placement cell and modern auditorium make you industry-ready.

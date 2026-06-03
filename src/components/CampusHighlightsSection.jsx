@@ -15,10 +15,10 @@ const CampusHighlightsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-transparent py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-transparent py-4 md:py-6 px-6 md:px-12 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Top Divider Line with Red Gradient */}
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-10 opacity-15" />
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-6 opacity-15" />
 
         {/* Main Content: Flex column on mobile (text then image), Row on desktop */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">

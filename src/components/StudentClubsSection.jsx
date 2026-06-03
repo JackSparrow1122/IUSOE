@@ -1,9 +1,9 @@
 import React from "react";
-import club1 from "../assets/Events/club2.jpeg";
+import club3 from "../assets/Events/club2.jpeg";
 import club2 from "../assets/Events/club1.jpeg";
-import club3 from "../assets/Events/club3.jpeg";
-import club4 from "../assets/Events/club4.jpeg";
-import club5 from "../assets/Events/club5.jpeg";
+import club1 from "../assets/Events/club3.jpg";
+import club5 from "../assets/Events/club4.jpeg";
+import club4 from "../assets/Events/club5.jpeg";
 
 const StudentClubsSection = () => {
   const clubs = [
@@ -15,10 +15,10 @@ const StudentClubsSection = () => {
   ];
 
   return (
-    <section className="w-full bg-transparent py-12 md:py-16 px-6 md:px-12 text-white">
+    <section className="w-full bg-transparent pt-4 pb-12 md:pt-6 md:pb-16 px-6 md:px-12 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Top Divider Line with Red Gradient */}
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-10 opacity-15" />
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#8B0035] to-transparent mb-6 opacity-15" />
 
         {/* Main Content: Flex column on mobile, Row on desktop */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">

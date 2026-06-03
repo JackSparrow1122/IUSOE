@@ -65,6 +65,13 @@ const POINTERS_DATA = [
 
 ];
 const ProgramOverview = () => {
+  const handleApplyClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Top Section */}
@@ -81,7 +88,7 @@ const ProgramOverview = () => {
           {PROGRAM_CONTENT.sectionDesc}
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full mb-6">
         {POINTERS_DATA.map(({ id, title, value, icon: Icon }) => (
           <div
             key={id}
@@ -104,21 +111,38 @@ const ProgramOverview = () => {
       {PROGRAM_CONTENT.specialisations.map((spec, index) => {
         const isEven = index % 2 === 0;
         return (
-          <div key={index} className="mb-16 last:mb-8">
+          <div key={index} className="mb-8 last:mb-6">
             {/* Desktop Course Box */}
             <div
-              className="hidden md:flex w-full min-h-[45vh] bg-[#071A8C] overflow-hidden bg-cover bg-top rounded-tl-[2.5rem] rounded-br-[2.5rem] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative py-8 md:py-10"
-              style={{ backgroundImage: `url(${spec.bgImage})` }}
+              className="hidden md:flex w-full min-h-[45vh] rounded-tl-[2.5rem] rounded-br-[2.5rem] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative py-8 md:py-10"
             >
-              {/* Gradient Overlay for Text Readability */}
-              <div
-                className={`absolute inset-0 ${isEven
-                  ? "bg-gradient-to-r from-[#071A8C]/95 via-[#071A8C]/75 to-transparent"
-                  : "bg-gradient-to-l from-[#071A8C]/95 via-[#071A8C]/75 to-transparent"
-                  }`}
-              />
+              {/* Inner container to handle background image and gradient clipping */}
+              <div className="absolute inset-0 rounded-tl-[2.5rem] rounded-br-[2.5rem] overflow-hidden z-0 pointer-events-none bg-[#071A8C]">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-top"
+                  style={{ backgroundImage: `url(${spec.bgImage})` }}
+                />
+                {/* Gradient Overlay */}
+                <div
+                  className={`absolute inset-0 ${isEven
+                    ? "bg-gradient-to-r from-[#071A8C]/95 via-[#071A8C]/75 to-transparent"
+                    : "bg-gradient-to-l from-[#071A8C]/95 via-[#071A8C]/75 to-transparent"
+                    }`}
+                />
+              </div>
 
-              {!isEven && <div className="w-[40%] h-full" />}
+              {/* Study Mode Info Panel for Cyber (Odd Index) */}
+              {!isEven && (
+                <div className="relative z-10 w-[40%] h-full flex flex-col justify-center items-start text-white pl-8 md:pl-12 lg:pl-16 select-none">
+                  <div className="text-left bg-black/20 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-xl max-w-[240px]">
+                    <p className="text-white/70 text-xs md:text-sm tracking-wide font-medium">Study Mode</p>
+                    <p className="text-white font-bold text-sm md:text-base mb-3">Full-Time</p>
+                    <p className="text-white/70 text-xs md:text-sm tracking-wide font-medium">Duration</p>
+                    <p className="text-white font-bold text-sm md:text-base">4 Years (8 Semesters)</p>
+                  </div>
+                </div>
+              )}
 
               <div className="relative z-10 w-[60%] h-full flex flex-col justify-center px-8 md:px-12">
                 <h2 className="text-white text-xl md:text-3xl font-bold leading-tight">
@@ -136,19 +160,56 @@ const ProgramOverview = () => {
                 </ul>
               </div>
 
-              {isEven && <div className="w-[40%] h-full" />}
+              {/* Study Mode Info Panel for AI (Even Index) */}
+              {isEven && (
+                <div className="relative z-10 w-[40%] h-full flex flex-col justify-center items-end text-white pr- md:pr-12 lg:pr-16 select-none">
+                  <div className="text-left md:text-right bg-black/20 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-xl max-w-[240px]">
+                    <p className="text-white/70 text-xs md:text-sm tracking-wide font-medium">Study Mode</p>
+                    <p className="text-white font-bold text-sm md:text-base mb-3">Full-Time</p>
+                    <p className="text-white/70 text-xs md:text-sm tracking-wide font-medium">Duration</p>
+                    <p className="text-white font-bold text-sm md:text-base">4 Years (8 Semesters)</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Desktop Apply Button overlapping bottom border */}
+              <button
+                onClick={handleApplyClick}
+                className={`absolute bottom-0 ${isEven ? "right-12" : "left-12"
+                  } transform translate-y-1/2 bg-[#990000] hover:bg-[#800000] hover:scale-105 active:scale-95 transition-all duration-300 text-white font-bold text-xs md:text-sm tracking-wider px-6 py-2.5 rounded-lg shadow-lg flex items-center gap-2 z-20`}
+              >
+                APPLY NOW
+                <svg
+                  className="w-4 h-4 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
             </div>
 
             {/* Mobile Course Card */}
             <div
-              className="block md:hidden w-full rounded-tl-[2rem] rounded-br-[2rem] overflow-hidden relative shadow-md"
-              style={{
-                backgroundImage: `url(${spec.bgImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "top"
-              }}
+              className="block md:hidden w-full rounded-tl-[2rem] rounded-br-[2rem] relative shadow-md pb-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#071A8C]/90 via-[#071A8C]/70 to-transparent" />
+              {/* Inner container to handle background image and gradient clipping */}
+              <div className="absolute inset-0 rounded-tl-[2rem] rounded-br-[2rem] overflow-hidden z-0 pointer-events-none">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-top"
+                  style={{ backgroundImage: `url(${spec.bgImage})` }}
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#071A8C]/90 via-[#071A8C]/70 to-transparent" />
+              </div>
+
               <div className="relative z-10 p-6">
                 <h2 className="text-white text-lg font-bold leading-tight mb-2">
                   {spec.title}
@@ -156,14 +217,47 @@ const ProgramOverview = () => {
                 <p className="text-white/85 text-xs mb-4 leading-relaxed text-justify">
                   {spec.description}
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-1 mb-5">
                   {spec.points.map((point, i) => (
                     <li key={i} className="text-white text-xs">
                       • {point}
                     </li>
                   ))}
                 </ul>
+
+                {/* Additional Study Info on Mobile */}
+                <div className="flex justify-between border-t border-white/20 pt-4 mb-4 text-white">
+                  <div>
+                    <p className="text-white/60 text-[10px] uppercase font-medium">Study Mode</p>
+                    <p className="text-white font-bold text-xs">Full-Time</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 text-[10px] uppercase font-medium">Duration</p>
+                    <p className="text-white font-bold text-xs">4 Years (8 Sem)</p>
+                  </div>
+                </div>
               </div>
+
+              {/* Mobile Apply Button overlapping bottom border */}
+              <button
+                onClick={handleApplyClick}
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-[#990000] hover:bg-[#800000] active:scale-95 transition-all duration-300 text-white font-bold text-xs tracking-wider px-6 py-2 rounded-lg shadow-lg flex items-center gap-1.5 z-20 whitespace-nowrap"
+              >
+                APPLY NOW
+                <svg
+                  className="w-3.5 h-3.5 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         );
