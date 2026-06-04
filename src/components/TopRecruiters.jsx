@@ -18,7 +18,7 @@ const TopRecruiters = () => {
   const row2 = logos.slice(itemsPerRow, itemsPerRow * 2);
   const row3 = logos.slice(itemsPerRow * 2);
 
-  // Helper to repeat the logo array to fill the screen width and enable seamless loop
+  // Helper to repeat the logo array to fill the screens width and enable seamless loop
   const repeatToFill = (arr) => {
     if (!arr || arr.length === 0) return [];
     return Array(6).fill(arr).flat();
