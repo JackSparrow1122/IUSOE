@@ -26,6 +26,7 @@ function Footer() {
                 src={logo}
                 alt="Indira University Logo"
                 className="w-48 h-auto"
+                loading="lazy"
               />
             </Link>
 

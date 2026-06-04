@@ -1,4 +1,5 @@
 
+import { LazyBackground } from "./LazyLoad";
 import Dots from "../assets/cta.avif";
 
 /**
@@ -21,9 +22,9 @@ const RecruitersStats = () => {
   };
 
   return (
-    <section
+    <LazyBackground
+      src={Dots}
       className="w-full bg-[#000B24] py-6 md:py-10 px-6 md:px-12 text-center relative overflow-hidden bg-cover bg-top"
-      style={{ backgroundImage: `url(${Dots})` }}
     >
 
       <div className="max-w-5xl mx-auto relative z-10 py-1 md:space-y-4">
@@ -61,7 +62,7 @@ const RecruitersStats = () => {
           </button>
         </div>
       </div>
-    </section>
+    </LazyBackground>
   );
 };
 

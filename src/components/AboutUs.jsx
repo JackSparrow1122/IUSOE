@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { LazyImage } from "./LazyLoad";
 
 import overviewImg from "../assets/IU.avif";
 
@@ -85,11 +86,10 @@ function AboutUs() {
         <div className="about-image-wrapper w-full md:w-[55%] relative flex items-center justify-center">
           {/* Main Image */}
           <div className="w-full h-[280px] md:h-[380px] overflow-hidden rounded-tl-[2.5rem] rounded-br-[2.5rem] shadow-lg border border-slate-100">
-            <img
+            <LazyImage
               src={overviewImg}
               alt="School of Engineering Overview"
               className="about-img w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-              loading="lazy"
             />
           </div>
         </div>

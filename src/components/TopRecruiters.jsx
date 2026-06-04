@@ -47,6 +47,7 @@ const TopRecruiters = () => {
                 src={logo}
                 alt="Recruiter Logo"
                 className="max-h-full max-w-full object-contain"
+                loading="lazy"
               />
             </div>
           ))}
@@ -67,6 +68,7 @@ const TopRecruiters = () => {
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -85,6 +87,7 @@ const TopRecruiters = () => {
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -103,6 +106,7 @@ const TopRecruiters = () => {
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}

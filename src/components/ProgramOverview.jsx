@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LazyBackground } from "./LazyLoad";
 import Ai from "../assets/Ai.avif";
 import Cyber from "../assets/Cyber.avif";
 import {
@@ -191,9 +192,9 @@ const ProgramOverview = () => {
               {/* Inner container to handle background image and gradient clipping */}
               <div className="absolute inset-0 rounded-tl-[2.5rem] rounded-br-[2.5rem] overflow-hidden z-0 pointer-events-none bg-[#071A8C]">
                 {/* Background Image */}
-                <div
+                <LazyBackground
+                  src={spec.bgImage}
                   className="program-spec-bg absolute inset-0 bg-cover bg-top"
-                  style={{ backgroundImage: `url(${spec.bgImage})` }}
                 />
                 {/* Gradient Overlay */}
                 <div
@@ -274,9 +275,9 @@ const ProgramOverview = () => {
               {/* Inner container to handle background image and gradient clipping */}
               <div className="absolute inset-0 rounded-tl-4xl rounded-br-4xl overflow-hidden z-0 pointer-events-none">
                 {/* Background Image */}
-                <div
+                <LazyBackground
+                  src={spec.bgImage}
                   className="absolute inset-0 bg-cover bg-top"
-                  style={{ backgroundImage: `url(${spec.bgImage})` }}
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-linear-to-r from-[#071A8C]/90 via-[#071A8C]/70 to-transparent" />

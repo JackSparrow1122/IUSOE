@@ -1,4 +1,5 @@
 
+import { LazyBackground } from "./LazyLoad";
 import CtaBg from "../assets/cta.avif";
 
 /**
@@ -21,9 +22,9 @@ function OurCourse() {
   };
 
   return (
-    <section
+    <LazyBackground
+      src={CtaBg}
       className="w-full bg-[#000B24] py-4 md:py-4 px-6 md:px-12 text-center relative overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${CtaBg})` }}
     >
       <div className="max-w-5xl mx-auto relative z-10 py-2 md:space-y-4">
         {/* Headline */}
@@ -60,7 +61,7 @@ function OurCourse() {
           </button>
         </div>
       </div>
-    </section>
+    </LazyBackground>
   );
 }
 

@@ -1,4 +1,5 @@
 
+import { LazyImage } from "./LazyLoad";
 import club3 from "../assets/Events/club2.avif";
 import club2 from "../assets/Events/club1.avif";
 import club1 from "../assets/Events/club3.avif";
@@ -57,7 +58,7 @@ const StudentClubsSection = () => {
                   className={`overflow-hidden rounded-xl shadow ${i === 4 ? "col-span-2" : ""
                     }`}
                 >
-                  <img src={c.image} alt={c.name} className="w-full h-40 object-cover" loading="lazy" />
+                  <LazyImage src={c.image} alt={c.name} className="w-full h-40 object-cover" />
                 </div>
               ))}
             </div>
@@ -71,19 +72,19 @@ const StudentClubsSection = () => {
               }}
             >
               <div style={{ gridColumn: "1 / span 4", gridRow: "1 / span 4" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={clubs[1].image} alt={clubs[1].name} className="w-full h-full object-cover" loading="lazy" />
+                <LazyImage src={clubs[1].image} alt={clubs[1].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "5 / span 2", gridRow: "1 / span 7" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={clubs[0].image} alt={clubs[0].name} className="w-full h-full object-cover" loading="lazy" />
+                <LazyImage src={clubs[0].image} alt={clubs[0].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "1 / span 2", gridRow: "5 / span 6" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={clubs[2].image} alt={clubs[2].name} className="w-full h-full object-cover" loading="lazy" />
+                <LazyImage src={clubs[2].image} alt={clubs[2].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "3 / span 2", gridRow: "5 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={clubs[3].image} alt={clubs[3].name} className="w-full h-full object-cover" loading="lazy" />
+                <LazyImage src={clubs[3].image} alt={clubs[3].name} className="w-full h-full object-cover" />
               </div>
               <div style={{ gridColumn: "3 / span 4", gridRow: "8 / span 3" }} className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <img src={clubs[4].image} alt={clubs[4].name} className="w-full h-full object-cover" style={{ objectPosition: "center 18%" }} loading="lazy" />
+                <LazyImage src={clubs[4].image} alt={clubs[4].name} className="w-full h-full object-cover" style={{ objectPosition: "center 18%" }} />
               </div>
             </div>
           </div>
