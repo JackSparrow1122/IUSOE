@@ -7,7 +7,7 @@ const logos = Object.entries(logoModules)
   .map(([, mod]) => mod.default);
 
 const RECRUITERS_CONTENT = {
-  title: "INDIRA'S TOP RECRUITERS",
+  title: "Indira's Top Recruiters",
   description: "Trusted by 350+ Leading Recruiters of India"
 };
 
