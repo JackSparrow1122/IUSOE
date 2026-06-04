@@ -1,13 +1,13 @@
-import React from "react";
+
 
 // Dynamically import all logos directly from the src/assets/Logo folder (excluding logo 44)
-const logoModules = import.meta.glob("../assets/Logo/*.jpg", { eager: true });
+const logoModules = import.meta.glob("../assets/Logo/*.avif", { eager: true });
 const logos = Object.entries(logoModules)
-  .filter(([path]) => !path.endsWith("/44.jpg"))
-  .map(([_, mod]) => mod.default);
+  .filter(([path]) => !path.endsWith("/44.avif"))
+  .map(([, mod]) => mod.default);
 
 const RECRUITERS_CONTENT = {
-  title: "Top Recruiters",
+  title: "Indira's Top Recruiters",
   description: "Trusted by 350+ Leading Recruiters of India"
 };
 
@@ -18,16 +18,16 @@ const TopRecruiters = () => {
   const row2 = logos.slice(itemsPerRow, itemsPerRow * 2);
   const row3 = logos.slice(itemsPerRow * 2);
 
-  // Helper to repeat the logo array to fill the screen width and enable seamless loop
+  // Helper to repeat the logo array to fill the screens width and enable seamless loop
   const repeatToFill = (arr) => {
     if (!arr || arr.length === 0) return [];
     return Array(6).fill(arr).flat();
   };
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-4 md:py-8 px-4 overflow-hidden">
+    <section className="w-full bg-linear-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-4 md:py-8 px-4 overflow-hidden">
       <div className="w-full text-center mb-8 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
+        <h2 className="text-2xl md:text-5xl font-bold text-white mb-3 leading-tight">
           {RECRUITERS_CONTENT.title}
         </h2>
         <p className="text-gray-200 text-md md:text-2xl font-medium leading-relaxed opacity-90">
@@ -47,6 +47,7 @@ const TopRecruiters = () => {
                 src={logo}
                 alt="Recruiter Logo"
                 className="max-h-full max-w-full object-contain"
+                loading="lazy"
               />
             </div>
           ))}
@@ -61,12 +62,13 @@ const TopRecruiters = () => {
             {repeatToFill(row1).map((logo, index) => (
               <div
                 key={`row1-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
+                className="shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
               >
                 <img
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -79,12 +81,13 @@ const TopRecruiters = () => {
             {repeatToFill(row2).map((logo, index) => (
               <div
                 key={`row2-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
+                className="shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
               >
                 <img
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -97,12 +100,13 @@ const TopRecruiters = () => {
             {repeatToFill(row3).map((logo, index) => (
               <div
                 key={`row3-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
+                className="shrink-0 bg-white rounded-xl flex items-center justify-center p-2.5 w-[170px] h-[75px] shadow-lg"
               >
                 <img
                   src={logo}
                   alt="Recruiter Logo"
                   className="max-h-full max-w-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
