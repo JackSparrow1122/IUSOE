@@ -27,7 +27,7 @@ const TopRecruiters = () => {
   return (
     <section className="w-full bg-linear-to-r from-[#01051F] via-[#14002E] to-[#8B0035] py-4 md:py-8 px-4 overflow-hidden">
       <div className="w-full text-center mb-8 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
+        <h2 className="text-2xl md:text-5xl font-bold text-white mb-3 leading-tight">
           {RECRUITERS_CONTENT.title}
         </h2>
         <p className="text-gray-200 text-md md:text-2xl font-medium leading-relaxed opacity-90">

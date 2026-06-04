@@ -71,7 +71,7 @@ function AboutUs() {
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="about-text w-full md:w-[45%] space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#000B24] leading-tight">
+          <h2 className="text-2xl md:text-5xl font-bold text-[#000B24] leading-tight">
             {ABOUT_CONTENT.title}
           </h2>
 

@@ -25,7 +25,7 @@ const StudentClubsSection = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Left Side: Text content */}
           <div className="w-full md:w-[40%] space-y-6 order-1 md:order-1">
-            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h3 className="text-2xl md:text-5xl font-bold text-white leading-tight">
               Engineering Student Clubs
             </h3>
             <div className="space-y-4">

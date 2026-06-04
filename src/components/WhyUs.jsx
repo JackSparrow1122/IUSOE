@@ -49,7 +49,7 @@ const WhyUs = () => {
   return (
     <section className="w-full bg-white py-16 px-6">
       <div className="w-full">
-        <h2 className="text-3xl md:text-5xl font-serif text-[#000B24] mb-12 text-center ">
+        <h2 className="text-2xl md:text-5xl font-serif text-[#000B24] mb-12 text-center ">
           Why Choose Us?
         </h2>
 

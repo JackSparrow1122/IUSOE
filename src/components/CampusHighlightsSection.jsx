@@ -26,7 +26,7 @@ const CampusHighlightsSection = () => {
 
           {/* Text Content: order-1 on mobile, order-2 on desktop */}
           <div className="w-full md:w-[40%] space-y-6 order-1 md:order-2">
-            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h3 className="text-2xl md:text-5xl font-bold text-white leading-tight">
               Campus Facilities &amp; Infrastructure
             </h3>
             <p className="text-sm md:text-lg text-slate-200 leading-relaxed text-justify">
