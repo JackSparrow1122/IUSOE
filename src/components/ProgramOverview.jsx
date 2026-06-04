@@ -181,6 +181,14 @@ const ProgramOverview = () => {
         ))}
       </div>
 
+      {/* Specializations Heading */}
+      <div className="w-full text-center mt-12 mb-10">
+        <h3 className="text-2xl md:text-3.5xl font-extrabold text-[#000B24] tracking-tight relative inline-block">
+          Specializations We Offer
+          <span className="absolute left-1/2 bottom-[-8px] transform -translate-x-1/2 w-16 h-1 bg-[#990000] rounded-full" />
+        </h3>
+      </div>
+
       {PROGRAM_CONTENT.specialisations.map((spec, index) => {
         const isEven = index % 2 === 0;
         return (
